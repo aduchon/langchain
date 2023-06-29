@@ -1,5 +1,5 @@
 from langchain.chains.router.base import RouterChain, MultiRouteChain
-from typing import Any, Dict, List, Mapping, Self, Optional
+from typing import Any, Dict, List, Mapping, Optional
 from langchain.chains.llm import LLMChain
 from langchain.chains import ConversationChain
 from langchain.base_language import BaseLanguageModel
@@ -8,7 +8,7 @@ from langchain.chains.router.multi_sql_prompt import MULTI_SQL_ROUTER_TEMPLATE
 from langchain.prompts.prompt import PromptTemplate
 from langchain.chains.router.base import MultiRouteChain, RouterChain
 from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
-
+from typing_extensions import Self
 
 class MultiSqlChain(MultiRouteChain):
     """A multi-route chain that uses an LLM router chain to choose amongst SQL chains."""

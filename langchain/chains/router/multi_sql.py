@@ -1,5 +1,5 @@
 from langchain.chains.router.base import RouterChain, MultiRouteChain
-from typing import Any, Dict, List, Mapping, NamedTuple, Optional
+from typing import Any, Dict, List, Mapping, Self, Optional
 from langchain.chains.llm import LLMChain
 from langchain.chains import ConversationChain
 from langchain.base_language import BaseLanguageModel
@@ -10,7 +10,7 @@ from langchain.chains.router.base import MultiRouteChain, RouterChain
 from langchain.chains.router.llm_router import LLMRouterChain, RouterOutputParser
 
 
-class MultiSQLChain(MultiRouteChain):
+class MultiSqlChain(MultiRouteChain):
     """A multi-route chain that uses an LLM router chain to choose amongst SQL chains."""
 
     router_chain: RouterChain
@@ -33,7 +33,7 @@ class MultiSQLChain(MultiRouteChain):
         default_chain: Optional[LLMChain] = None,
         verbose: bool = False,
         **kwargs: Any,
-    ) -> MultiSQLChain:
+    ) -> Self:
         """Convenience constructor for instantiating from destination prompts."""
         destinations = [f"{p['name']}: {p['description']}" for p in prompt_infos]
         destinations_str = "\n".join(destinations)

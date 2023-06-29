@@ -52,8 +52,11 @@ class MultiSqlChain(MultiRouteChain):
             prompt_template = p_info["prompt_template"]
             prompt = PromptTemplate(template=prompt_template,
                                     input_variables=["input", "table_info", ],
-                                    output_key="text")
-            chain = SQLDatabaseChain.from_llm(llm, db, prompt=prompt, verbose=verbose)
+                                    )
+            chain = SQLDatabaseChain.from_llm(llm, db, prompt=prompt,
+                                              output_key="text",
+                                              verbose=verbose,
+                                              )
             destination_chains[name] = chain
         _default_chain = default_chain or ConversationChain(llm=llm, output_key="text")
         return cls(

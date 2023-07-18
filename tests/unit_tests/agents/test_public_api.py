@@ -12,6 +12,7 @@ _EXPECTED = [
     "LLMSingleActionAgent",
     "MRKLChain",
     "OpenAIFunctionsAgent",
+    "OpenAIMultiFunctionsAgent",
     "ReActChain",
     "ReActTextWorldAgent",
     "SelfAskWithSearchChain",
@@ -35,6 +36,7 @@ _EXPECTED = [
     "load_huggingface_tool",
     "load_tools",
     "tool",
+    "create_xorbits_agent",
 ]
 
 
